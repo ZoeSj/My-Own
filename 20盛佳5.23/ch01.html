@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+var x=0,y=0;
+function move(){
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  context.clearRect(0,0,0,0);
+  if(x<0){
+  x++;
+  }
+  if(y<200){
+  y++;
+  }
+  
+  }
+ function draw()
+ {
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  context.arc(100,100,80,0,Math.PI*2,true);
+  context.stroke();
+  
+ 
+  setInterval(move,200);
+ }
+
+</script>
+<body background="back4.jpg">
+<legend>
+<canvas id="myCanvas" width="500px" height="500px">
+</canvas>
+<br>
+<button onClick="draw()">绘图</button>
+</legend>
+</body>
+</html>

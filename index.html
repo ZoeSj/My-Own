@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+	<head>
+		<title>这是我的世界</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<link rel="stylesheet" type="text/css" href="http://fonts.useso.com/css?family=RobotoDraft:300,500">
+		<link rel="stylesheet" type="text/css" href="assets/default.css">
+		<link rel="stylesheet" type="text/css" href="assets/account.css" />
+		<style type="text/css">
+			body {
+				background-color: #326696;
+				margin: 0px;
+				overflow: hidden;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+				font-weight: bold;
+				text-align:center;
+			}
+			.login{
+
+				background:url(../assets/index.png)
+			}
+			
+		</style>
+		<script type="text/javascript">
+		function sheet(){
+			location.href = "regester.html";
+			}
+		function login() {
+			 var uname=document.getElementById("username").value ;
+			 var pword=document.getElementById("password").value ;
+			 setCookie("username",uname);
+			 setCookie("password",pword);
+			
+			}
+			//写cookies 
+
+			function setCookie(sName, sValue, oExpires, sPath, sDomain, bSecure) {
+			    var sCookie = sName + "=" + encodeURIComponent(sValue);
+
+			    if (oExpires) {
+			        sCookie += "; expires=" + oExpires.toGMTString();
+			    }
+
+			    if (sPath) {
+			        sCookie += "; path=" + sPath;
+			    }
+
+			    if (sDomain) {
+			        sCookie += "; domain=" + sDomain;
+			    }
+
+			    if (bSecure) {
+			        sCookie += "; secure";
+			    }
+
+			    document.cookie = sCookie;
+			}
+		/* 用途: 接收地直栏参数 取id=1 根据ID的值 */
+		urlinfo=window.location.href; //获取当前页面的url
+		len=urlinfo.length;//获取url的长度
+		offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
+		newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+		newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+		newsid=newsids[1];//得到参数值
+		newsname=newsids[0];//得到参数名字
+	/* 	if(newsid==1){
+			alert("用户名或密码错误！")
+			
+		}
+		if(newsid==2){
+			alert("您处于未登录状态，请先用户名和密码！")
+			
+		} */
+		
+		</script>
+	</head>
+	<body>
+	<div id="container">
+		<div class="login">
+
+			<div class="photo">
+			
+			</div>
+			<span>welcome</span>
+			<form action="firstpage/index.html" id="login-form" method="post">
+				<div id="u" class="form-group">
+					<input id="username" spellcheck=false class="form-control" name="username" type="text" size="18" alt="login" required>
+					<span class="form-highlight"></span>
+					<span class="form-bar"></span>
+					<label for="username" class="float-label">用户名</label>
+
+				</div>
+				<div id="p" class="form-group">
+					<input id="password" class="form-control" spellcheck=false name="password" type="password" size="18" alt="login" required>
+					<span class="form-highlight"></span>
+					<span class="form-bar"></span>
+					<label for="password" class="float-label">密码</label>
+
+				</div>
+				<div class="form-group">
+					<input type="checkbox" id="rem">
+                    <button id="login" type="submit" onClick="sheet()">注册</button>
+
+					<button id="submit" type="submit" >登录</button>
+                    
+				</div>
+			</form>
+		</div>
+	<script type="text/javascript" src="assets/three.min.js"></script>
+		<script type="text/javascript" src="assets/Detector.js"></script>
+		<script id="vs" type="x-shader/x-vertex">
+
+			varying vec2 vUv;
+
+			void main() {
+
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+			}
+
+		</script>
+
+		<script id="fs" type="x-shader/x-fragment">
+
+			uniform sampler2D map;
+
+			uniform vec3 fogColor;
+			uniform float fogNear;
+			uniform float fogFar;
+
+			varying vec2 vUv;
+
+			void main() {
+
+				float depth = gl_FragCoord.z / gl_FragCoord.w;
+				float fogFactor = smoothstep( fogNear, fogFar, depth );
+
+				gl_FragColor = texture2D( map, vUv );
+				gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+				gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+
+			}
+
+		</script>
+
+		<script type="text/javascript">
+
+			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+			var container;
+			var camera, scene, renderer;
+			var mesh, geometry, material;
+
+			var mouseX = 0, mouseY = 0;
+			var start_time = Date.now();
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			init();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				// Bg gradient
+
+				var canvas = document.createElement( 'canvas' );
+				canvas.width = 32;
+				canvas.height = window.innerHeight;
+
+				var context = canvas.getContext( '2d' );
+
+				var gradient = context.createLinearGradient( 0, 0, 0, canvas.height );
+				gradient.addColorStop(0, "#1e4877");
+				gradient.addColorStop(0.5, "#4584b4");
+
+				context.fillStyle = gradient;
+				context.fillRect(0, 0, canvas.width, canvas.height);
+
+				container.style.background = 'url(' + canvas.toDataURL('image/png') + ')';
+				container.style.backgroundSize = '32px 100%';
+
+				//
+
+				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 3000 );
+				camera.position.z = 6000;
+
+				scene = new THREE.Scene();
+
+				geometry = new THREE.Geometry();
+
+				var texture = THREE.ImageUtils.loadTexture( 'cloud10.png', null, animate );
+				texture.magFilter = THREE.LinearMipMapLinearFilter;
+				texture.minFilter = THREE.LinearMipMapLinearFilter;
+
+				var fog = new THREE.Fog( 0x4584b4, - 100, 3000 );
+
+				material = new THREE.ShaderMaterial( {
+
+					uniforms: {
+
+						"map": { type: "t", value: texture },
+						"fogColor" : { type: "c", value: fog.color },
+						"fogNear" : { type: "f", value: fog.near },
+						"fogFar" : { type: "f", value: fog.far },
+
+					},
+					vertexShader: document.getElementById( 'vs' ).textContent,
+					fragmentShader: document.getElementById( 'fs' ).textContent,
+					depthWrite: false,
+					depthTest: false,
+					transparent: true
+
+				} );
+
+				var plane = new THREE.Mesh( new THREE.PlaneGeometry( 64, 64 ) );
+
+				for ( var i = 0; i < 8000; i++ ) {
+
+					plane.position.x = Math.random() * 1000 - 500;
+					plane.position.y = - Math.random() * Math.random() * 200 - 15;
+					plane.position.z = i;
+					plane.rotation.z = Math.random() * Math.PI;
+					plane.scale.x = plane.scale.y = Math.random() * Math.random() * 1.5 + 0.5;
+
+					THREE.GeometryUtils.merge( geometry, plane );
+
+				}
+
+				mesh = new THREE.Mesh( geometry, material );
+				scene.add( mesh );
+
+				mesh = new THREE.Mesh( geometry, material );
+				mesh.position.z = - 8000;
+				scene.add( mesh );
+
+				renderer = new THREE.WebGLRenderer( { antialias: false } );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) * 0.25;
+				mouseY = ( event.clientY - windowHalfY ) * 0.15;
+
+			}
+
+			function onWindowResize( event ) {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				position = ( ( Date.now() - start_time ) * 0.03 ) % 8000;
+
+				camera.position.x += ( mouseX - camera.position.x ) * 0.01;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0.01;
+				camera.position.z = - position + 8000;
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</div>
+	</body>
+</html>

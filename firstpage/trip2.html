@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>小狐狸爱吃糖</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<style>
+		.top-banner {
+			background-color: rgba(255, 255, 255, 0.55);
+		}
+		.top-banner a {
+			color: #019135;
+		}
+		h1 {
+			margin-top: 100px;
+			font-family: 'Microsoft Yahei';
+			font-size: 36px;
+			color: #019157;
+text-shadow:10px 10px 5px gray;
+		}		
+		</style>		
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>这些年说走就走的旅行</h1>
+			
+			<div class="more">
+				<ul id="sb-examples">
+					<li><a href="trip2.html">天柱山</a></li>
+					<li><a href="trip3.html">黄山之行</a></li>
+					<li><a href="trip4.html">武汉光谷</a></li>
+					<li><a href="trip1.html">上海之旅</a>
+                    <li><a href="trip5.html">南京小玩</a></li>
+					<li><a href="trip6.html">想要放飞</a></li>
+                    <li><a href="trip7.html">快乐时光</a></li>
+                    <li>
+            <a href="index.html">返回上一页</a>
+            
+                    </li>
+				</ul>
+			</div>
+
+			<div class="wrapper">
+
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href=><img src="images/tzs01.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>
+                            成关天中近，蓬瀛海上遥。
+                            归期千载鹤，春至一来朝。
+                            采药逢三秀，餐霞卧九霄。
+                            参同如有旨，金鼎俟君烧。--送元洞真人谒司命祠
+唐·李隆基</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs02.jpg" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>太微星斗拱琼台，圣祖琳宫镇九垓。
+天柱一峰擎日月，洞门千仞锁云雷。
+玉光白橘相争秀，金翠佳莲蕊斗开。
+时访左慈高隐处，紫清仙鹤认巢来。---题天柱峰
+唐·白居易</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs03.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>龙舟千里扬东风，汉武浔阳事正同。
+回首皖公山色好，日斜不到寿杯中。--献南唐元宗诗
+      南唐·李家明</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs04.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>畏畏佳佳石谷水，鼓鼓隆隆山木风。
+炉香四百六十载，开山者谁梁宝公。---题山谷大石
+    宋·黄庭坚</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs05.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>屹然天一柱，雄镇斡维功。
+只说乾坤大，谁知立极功。---天柱峰       宋·朱熹</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs06.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>天柱峰高俯皖山，千寻耸立苍冥间。
+三台森列如拱揖，狮子麟角相回环。
+皎晴一望皆空翠，峰顶紫云覆华帔。
+鹤驾真人时往来，道书洞天第十四。
+当年汉帝钦嶙峋，潜岳封移南岳尊。
+中有桃花开五色，令人不疑武陵春。---天柱峰
+清·姚琅</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/tzs07.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>千峰巉绝一关雄，兵马堂堂百战功。
+护地丹心终不死，刚风长吼是王风。
+----西关吟
+乌以风</h3>
+						</div>
+					</li>
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				
+				<div id="nav-options" class="nav-options">
+					<span id="navPlay">Play</span>
+					<span id="navPause">Pause</span>
+				</div>
+
+			</div><!-- /wrapper -->
+
+			<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+		</div>
+		<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$navOptions = $( '#nav-options' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$navOptions.show();
+								$shadow.show();
+
+							},
+							orientation : 'h',
+							cuboidsCount : 3
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+							$( '#navPlay' ).on( 'click', function() {
+								
+								slicebox.play();
+								return false;
+
+							} );
+
+							$( '#navPause' ).on( 'click', function() {
+								
+								slicebox.pause();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+		
+	</body>
+</html>	

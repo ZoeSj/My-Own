@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<meta charset="utf-8" />
+<style>
+    img{width:100px;height:100px}
+</style>
+
+<body background="back4.jpg">
+    <div id="target" style="border-style:solid;width:200px;height:200px;margin-top:20px">
+    <p>将选择的文件拖拽带这里</p>
+    </div>
+    <table id="data" border="1">
+    </table>
+    <script>
+	   var target=document.getElemnetById("target");
+	   target.ondragenter=handleDrag;
+	   target.ondragover=handleDrag;
+	   
+	   function handleDrag(e){
+	      e.preventDefault();
+	   }
+	   
+
+	   target.ondrop=function(e){
+	   var files=e.dataTransfer.files;
+	   var tableElem=document.getElemnetById("data");
+	     tableElem.innerHTML="<tr><th>文件名</th><th>文件类型</th><th>文件大小</th></tr>";
+		 for(var i=0;i<files.length;i++){
+		    var row="<tr><td>"+files[i].name+"</td><td>+files[i].tupe+"</td><td>+files[i].size+"</td></tr>";
+			tableElem.innerHTML+=row;
+		 }
+		 e.preventDefault();
+	   }
+	   
+	  
+    </script>
+</body>
+</html>

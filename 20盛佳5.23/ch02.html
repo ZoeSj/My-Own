@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  var pic=new Image();
+  pic.src="dog2.jpg";
+ 
+function draw(){
+
+  context.clearRect(0,0,600,400);
+  context.save();
+  context.translate(600/2*Math.random(),400/2*Math.random());
+  context.drawImage(pic,0,0);
+  context.restore();
+  }
+   setInterval(move,1000);
+</script>
+<legend>
+<canvas id="myCanvas" width="850px" height="600px">
+</canvas>
+<br>
+<button onClick="draw()">原图</button>
+</legend>
+</html>

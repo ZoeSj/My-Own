@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+function draw(){
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  var image=new Image();
+  image.src="back4.jpg";
+  image.onload=function(){
+  
+  context.translate(250,120);
+  var r=0,a=100,start=0,end=0;
+  context.rotate(Math.PI);
+  for(var q=0;q<500;q++){
+  
+  start += Math.PI*2/500;
+  end=start+Math.PI*2/500;
+  r=a*(1-Math.sin(start))+60;
+  context.arc(0,0,r,start,end,false);
+  }
+  context.stroke();
+  context.clip();
+  context.drawImage(image,60,60);
+  }
+  
+}
+</script>
+<fieldset>
+<legend>
+<canvas id="myCanvas" width="600px" height="400px">
+</canvas>
+<br>
+<button onClick="draw()">图像裁剪</button>
+</legend>
+</fieldset>
+</html>

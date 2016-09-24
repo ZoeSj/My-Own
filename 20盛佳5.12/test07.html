@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+<title>无标题文档</title>
+<script>
+
+function drawArc(){
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+
+var mylinear=context.createLinearGradient(0,0,150,50);
+mylinear.addColorStop(0,"red");
+mylinear.addColorStop(0.8,"yellow");
+mylinear.addColorStop(1,"green");
+   context.fillStyle=mylinear;
+   context.fillRect(0,0,250,150);
+   var linearText=context.createLinearGradient(300,50,600,50);
+   linearText.addColorStop(0,"yellow");
+   linearText.addColorStop(0.5,"grey");
+   linearText.addColorStop(1,"red");
+ context.fillStyle=linearText;
+ context.font="30px Arial";
+ context.textBaseline="top";
+ context.fillText("HTML5线性渐变文字",300,50);
+}
+
+</script>
+<center>
+<fieldset>
+<legend>五星红旗</legend>
+<canvas id="myCanvas" width="600px" height="200px" style="background-color:pink">
+</canvas>
+<br>
+<button onClick="drawArc()">我的祖国</button>
+
+</fieldset>
+</center>
+
+</html>

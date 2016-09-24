@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+<title>无标题文档</title>
+<script>
+
+function drawArc(){
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+
+fillColorRadial=context.createRadialGradient(150,150,10,150,150,200);
+fillColorRadial.addColorStop(0,"red");
+fillColorRadial.addColorStop(0.2,"yellow");
+fillColorRadial.addColorStop(0.4,"pink");
+context.fillStyle=fillColorRadial;
+context.rect(0,0,300,300);
+context.fill();
+}
+
+</script>
+<center>
+<fieldset>
+<legend>五星红旗</legend>
+<canvas id="myCanvas" width="300px" height="300px" style="background-color:pink">
+</canvas>
+<br>
+<button onClick="drawArc()">我的祖国</button>
+
+</fieldset>
+</center>
+
+</html>

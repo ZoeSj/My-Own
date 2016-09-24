@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<meta charset="utf-8" />
+<style>
+    img{width:100px;height:100px}
+</style>
+
+<body background="back4.jpg">
+    <div id="src">
+      <img draggable="true" src="dog.jpg" id="b"/>
+      <img draggable="true" src="dog2.jpg" id="c"/>
+      <img draggable="true" src="dog1.jpg" id="d"/>
+      <img draggable="true" src="dog3.jpg" id="e"/>
+    </div>
+    <div id="target" style="border-style:solid;width:200px;height:200px;margin-top:20px">
+    <p>将选择的图片拖拽带这里</p>
+    </div>
+    <span id="msg"></span>
+    <script>
+       var src=document.getElementById("src");
+	   var target=document.getElemnetById("target");
+	   var msg=document.getElemnetById("msg");
+	   var draggedID;
+	   
+	   src.ondragstart=function(e){
+	      draggedTD=e.target.id;
+		  msg.innerHTML="开始拖拽: "+draggedID;
+	   }
+	   
+	   target.ondragenter=function(e){
+	     msg.innerHTML="进入目的元素";
+		 e.preventDefault();
+	   }
+	   
+	   target.ondragover=function(e){
+	     msg.innerHTML="在目的元素内移动";
+		 e.preventDefault();
+	   }
+	   
+	   src.ondragend=function(e){
+	    msg.innerHTML="结束拖拽";
+	   }
+	   
+	   target.ondrop=function(e){
+	    var newElem=document.getElemnetById(draggedID).cloneNode(false);
+		target.innerHTML="";
+		target.appendChild(newElem);
+		e.preventDefault();
+	   }
+    </script>
+</body>
+</html>

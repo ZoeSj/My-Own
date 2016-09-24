@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+function draw(){
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  drawText(context,"bold 40px impact",20,50,"stroke");
+  drawText(context,"bold 40px sans ms",50,100,"fill");
+}
+function drawText(context,font,x,y,fillType){
+   context.font=font;
+   context.textAlign="left";
+   context.textBaseline="top";
+   if(fillType == "fill"){
+   context.fillText("漫卷天外云卷云舒",x,y);
+   }else{
+   context.strokeText("闲看庭前花开花落",x,y);
+   }
+}
+</script>
+<body background="images/back2.jpg">
+<legend>
+<canvas id="myCanvas" width="400px" height="200px">
+</canvas>
+<br>
+<button onClick="draw()">click</button>
+</legend>
+</body>
+</html>

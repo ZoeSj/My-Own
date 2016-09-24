@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+var x=0,y=0;
+function move(){
+  var canvas=document.getElementById("myCanvas3");
+  var context=canvas.getContext("2d");
+  context.clearRect(0,0,400,200);
+  if(x<400){
+  x++;
+  }
+  if(y<200){
+  y++;
+  }
+  context.fillRect(x,y,50,50);
+  }
+ function draw3()
+ {
+  var canvas=document.getElementById("myCanvas3");
+  var context=canvas.getContext("2d");
+  context.fillStyle="pink";
+  context.fillRect(0,0,50,50);
+  setInterval(move,200);
+ }
+function draw1(i){
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  var image=new Image();
+  image.src="dog2.jpg";
+  image.onload=function(){
+   if(i==1)
+   context.drawImage(image,0,0);
+   else if(i==2)
+   context.drawImage(image,400,0,200,300);
+   else
+   context.drawImage(image,30,30,440,400,700,0,160,180);
+  }
+}
+function draw(j){
+  var canvas=document.getElementById("myCanvas1");
+  var context=canvas.getContext("2d");
+  var image=new Image();
+  image.src="dog3.jpg";
+  image.onload=function(){
+   if(j==1)
+      context.fillStyle=context.createPattern(image,"repeat-x");
+   else if(j==2)
+      context.fillStyle=context.createPattern(image,"repeat-y");
+   else
+      context.fillStyle=context.createPattern(image,"repeat");
+	  context.fillRect(0,0,canvas.width,canvas.height);
+  }
+}
+
+function draw2(){
+  var canvas=document.getElementById("myCanvas2");
+  var context=canvas.getContext("2d");
+  var image=new Image();
+  image.src="back4.jpg";
+  image.onload=function(){
+  
+  context.translate(250,120);
+  var r=0,a=100,start=0,end=0;
+  context.rotate(Math.PI);
+  for(var q=0;q<500;q++){
+  
+  start += Math.PI*2/500;
+  end=start+Math.PI*2/500;
+  r=a*(1-Math.sin(start))+60;
+  context.arc(0,0,r,start,end,false);
+  }
+  context.stroke();
+  context.clip();
+  context.drawImage(image,60,60);
+  }
+  
+}
+</script>
+
+<legend>
+<canvas id="myCanvas" width="850px" height="400px">
+</canvas>
+<br>
+<button onClick="draw1(1)">原图</button>
+<button onClick="draw1(2)">缩放图</button>
+<button onClick="draw1(3)">切割图</button>
+<br>
+<canvas id="myCanvas1" width="800px" height="600px">
+</canvas>
+<br>
+<button onClick="draw(1)">横向平铺</button>
+<button onClick="draw(2)">纵向平铺</button>
+<button onClick="draw(3)">全向平铺</button>
+<br>
+<canvas id="myCanvas2" width="600px" height="400px">
+</canvas>
+<br>
+<button onClick="draw2()">图像裁剪</button>
+<br>
+<canvas id="myCanvas3" width="400px" height="200px">
+</canvas>
+<br>
+<button onClick="draw3()">绘图</button>
+</legend>
+
+</html>

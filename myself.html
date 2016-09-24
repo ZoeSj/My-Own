@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>佳佳宝贝</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/icons.css" /> -->
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        <style>
+		.top-banner {
+			z-index: 999;
+			text-align: right;
+			height: 30px !important;
+			line-height: 30px !important;
+		}
+		.top-banner a {
+			color:green !important;
+			text-shadow: none;
+		}
+		.column {
+			margin: 60px auto;
+			float: none;
+			text-align: center;
+			width: 75%;
+			min-height: 100px;
+		}
+		div#buttonDiv{
+    width:800px;
+    display:none;
+}
+progress#playPercent{
+    width:800px;
+}
+div#progress{
+    width:800px;
+    height:20px;
+    left:0px;
+    background:#ccc;
+}
+div#progressValue{
+    width:0%;
+    height:20px;
+    background:green;
+    cursor:default;
+}
+div#showTime{
+    z-index:2;
+    display:none;
+    position:absolute;
+    font-size:10px;
+}
+canvas{
+    display:none;
+} 
+		</style>
+        <script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		
+	</head>
+    <body>
+    
+    <div id="st-container" class="st-container">
+
+            <nav class="st-menu st-effect-13" id="menu-13">
+					<h2 class="icon icon-stack">哎呀，这就是我！</h2>
+					<ul>
+					<!--<li><a class="icon icon-data" href="#">你了解我么？</a></li-->>
+					<li><a class="icon icon-location" href="myphoto/index.html" target="_blank">个人写真</a></li>
+					<li><a class="icon icon-study" href="hobby/music.html" target="_blank">我的爱好</a></li>
+					<li><a class="icon icon-photo" href="http://weibo.com/3843532794/profile?topnav=1&wvr=6&is_all=1" target="_blank">我的微博</a></li>
+					<!--<li><a class="icon icon-wallet" href="#">看，那时</a></li>-->
+					</ul>
+				</nav>
+                 <div class="st-pusher">
+            <div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<header class="codrops-header">
+							<h1>小白，汪！汪！汪！</h1>
+						</header>
+                        <div align="right">
+                              <a href="firstpage/index.html">返回首页</a>
+                              </div>
+						<div class="main clearfix">
+							<div id="st-trigger-effects" class="column">
+                            
+							
+                            <div align="right" >
+                                 </div>
+								<button data-effect="st-effect-13">想更了解我么？点我试试</button>
+                                 </div> 
+                                 甩起小尾巴 ！！
+                                  <video id="video" src="videos/mydog1.mp4" width="400" controls>
+                          您的浏览器不支持video元素
+                                  </video>
+                                  看，我的尾巴好看么！？
+                                   <video id="video" src="videos/mydog2.mp4" width="400" controls>
+                          您的浏览器不支持video元素
+                                  </video>
+                                    闻一闻， 香么？
+                                  <video id="video" src="videos/mydog3.mp4" width="400" controls>
+                          您的浏览器不支持video元素
+                                  </video>
+                                爱笑的女孩运气不会太差
+                                  <video id="video" src="videos/meannda.mp4" width="400" controls>
+                          您的浏览器不支持video元素
+                                  </video>
+                                 
+                            
+						</div><!-- /main -->
+						<div class="footer-banner" style="width:728px; margin:160px auto 0"></div>
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+        <script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+    </body>
+ </html>

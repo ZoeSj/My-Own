@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+<title>无标题文档</title>
+<script>
+
+function drawLine(){
+   var canvas = document.getElementById("myCanvas");
+   var context=canvas.getContext("2d");
+   context.fillStyle="yellow";
+   context.strokeStyle="yellow";
+    context.moveTo(15,150);
+   context.lineTo(100,140);
+   context.lineTo(170,90);
+   context.lineTo(230,140);
+    context.lineTo(315,150);
+	 context.lineTo(230,200);
+	 context.lineTo(300,263);
+	 context.lineTo(170,233);
+	 context.lineTo(30,263);
+	 context.lineTo(100,200);
+   context.fill();
+   context.stroke();
+   
+}
+
+function drawArc(){
+var canvas=document.getElementById("mycanvas");
+var context=canvas.getContext("2d");
+context.arc(100,100,80,0,(Math,PI/180)*90,false);
+context.stroke();
+}
+
+</script>
+<center>
+<fieldset>
+<legend>五星红旗</legend>
+<canvas id="myCanvas" width="300px" height="200px" style="background-color:red">
+</canvas>
+<br>
+<button onClick="drawArc()">我的祖国</button>
+
+</fieldset>
+</center>
+<body>
+</body>
+</html>

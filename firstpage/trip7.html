@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>小狐狸爱吃糖</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<style>
+		.top-banner {
+			background-color: rgba(255, 255, 255, 0.55);
+		}
+		.top-banner a {
+			color: #019135;
+		}
+		h1 {
+			margin-top: 100px;
+			font-family: 'Microsoft Yahei';
+			font-size: 36px;
+			color: #019157;
+text-shadow:10px 10px 5px gray;
+		}		
+		</style>		
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>这些年说走就走的旅行</h1>
+            <div class="more">
+				<ul id="sb-examples">
+					<li><a href="trip2.html">天柱山</a></li>
+					<li><a href="trip3.html">黄山之行</a></li>
+					<li><a href="trip4.html">武汉光谷</a></li>
+					<li><a href="trip1.html">上海之旅</a>
+                    <li><a href="trip5.html">南京小玩</a></li>
+					<li><a href="trip6.html">想要放飞</a></li>
+                    <li><a href="trip7.html">快乐时光</a></li>
+                    <li>
+            <a href="index.html">返回上一页</a>
+            
+                    </li>
+				</ul>
+			</div>
+			<div class="wrapper">
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a  ><img src="images/my07.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>每个人在他的人生发轫之初，总有一段时光，没有什么可留恋，只有抑制不住的梦想，没有什么可凭仗，只有他的好身体，没有地方可去，只想到处流浪。</h3>
+						</div>
+					</li>
+					<li>
+						<a =><img src="images/my02.jpg" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>很多事情就像是旅行一样，当你做出决定并迈出第一步的时候，最困难的那部分其实就已经完成了。</h3>
+						</div>
+					</li>
+					<li>
+						<a ><img src="images/my03.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>人生就像一场旅行，不必在乎目的地，在乎的是沿途的风景以及看风景的心情，让心灵去旅行!</h3>
+						</div>
+					</li>
+					<li>
+						<a ><img src="images/my04.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>问:为什么喜欢爬山？答:因为山在那。或许旅行一样，因为路在那。</h3>
+						</div>
+					</li>
+					<li>
+						<a ><img src="images/my05.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>旅行是为了离开，旅行是对庸常生活的一次越狱。</h3>
+						</div>
+					</li>
+					<li>
+						<a ><img src="images/my06.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>时代依旧负重前行，而你我已凌波微步。</h3>
+						</div>
+					</li>
+					<li>
+						<a ><img src="images/my01.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>旅行是消除仇恨和无知的最好方法。</h3>
+						</div>
+					</li>
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
+
+			</div><!-- /wrapper -->
+			<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+		</div>
+		<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$shadow.show();
+
+							},
+							orientation : 'r',
+							cuboidsRandom : true
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+	</body>
+</html>	

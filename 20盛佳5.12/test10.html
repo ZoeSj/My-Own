@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+<title>无标题文档</title>
+<script>
+
+function drawArc(i){
+
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+    
+var image=new Image();
+image.src="dog.jpg";
+image.onload=function(){
+if(i==1)
+context.drawImage(image,0,0);
+else if(i==2)
+context.drawImage(image,500,0,200,300);
+else if(i==3)
+context.drawImage(image,100,50,10,150,150,200,200,190);
+else
+    context.fillStyle="yellow";
+    context.strokeStyle="red";
+	context.fillRect(60,60,130,110);
+	context.strokeRect(50,50,150,130);
+	context.clearRect(70,70,110,90);
+}
+}
+
+</script>
+
+<fieldset>
+<legend>汪汪</legend>
+<canvas id="myCanvas" width="850px" height="600px">
+</canvas>
+<br>
+<button onclick="drawArc(1)">原图</button>
+<button onclick="drawArc(2)">缩放图</button>
+<button onClick="drawArc(3)">切割图</button>
+<button onClick="drawArc(4)">draw</button>
+</fieldset>
+
+
+</html>

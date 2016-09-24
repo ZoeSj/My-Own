@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>小狐狸爱吃糖</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+		<style>
+		.top-banner {
+			background-color: rgba(255, 255, 255, 0.55);
+		}
+		.top-banner a {
+			color: #019135;
+		}
+		h1 {
+			margin-top: 100px;
+			font-family: 'Microsoft Yahei';
+			font-size: 36px;
+			color: #019157;
+text-shadow:10px 10px 5px gray;
+		}
+		</style>			
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>这些年说走就走的旅行</h1>
+			
+			<div class="more">
+				<ul id="sb-examples">
+					<li><a href="trip2.html">天柱山</a></li>
+					<li><a href="trip3.html">黄山之行</a></li>
+					<li><a href="trip4.html">武汉光谷</a></li>
+					<li><a href="trip1.html">上海之旅</a></li>
+                    <li><a href="trip5.html">南京小玩</a></li>
+					<li><a href="trip6.html">想要放飞</a></li>
+                    <li><a href="trip7.html">快乐时光</a></li>
+<li>
+            <a href="index.html">返回上一页</a>
+            
+                    </li>
+				</ul>
+			</div>
+
+			<div class="wrapper">
+
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href=><img src="images/nj01.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>余少为江南客，而未游秣陵，尝有遗恨。后为历阳守，跂而望之。适有客以金陵五题相示，逌尔生思，欻然有得。他日友人白乐天掉头苦吟，叹赏良久，且曰《石头》诗云"潮湿打空城寂寞回"，吾知后之诗人，不复措词矣。余四咏虽不及此，亦不孤乐天之言耳。</h3>
+						</div>
+					</li>
+					<li>
+						<a href><img src="images/nj02.jpg" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>山围故国周遭在，潮打空城寂寞回。     淮水东边旧时月，夜深还过女墙来。</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/nj03.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>朱雀桥边野草花，乌衣巷口夕阳斜；     旧时王谢堂前燕，飞人寻常百姓家。</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/nj04.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>诏许辞中禁，慈颜赴北堂。圣朝新孝理，祖席倍辉光。     内帛擎偏重，宫衣著更香。淮阴清夜驿，京口渡江航。     春隔鸡人昼，秋期燕子凉。赐书夸父老，寿酒乐城隍。     看画曾饥渴，追踪恨淼茫。虎头金粟影，神妙独难忘。</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/nj05.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>古堞烟埋宫井树，陈主吴姬堕泉处。     舜没苍梧万里云，却不闻将二妃去。</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/nj06.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>江雨霏霏江草齐，六朝如梦鸟空啼。     无情最是台城柳，依旧烟笼十里堤。</h3>
+						</div>
+					</li>
+					<li>
+						<a href=><img src="images/nj07.jpeg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>苇声骚屑水天秋，吟对金陵古渡头。     千古是非输蝶梦，一轮风雨属渔舟。     若无仙分应须老，幸有归山即合休。     何必登临更惆怅，比来身世只如浮。</h3>
+						</div>
+					</li>
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
+
+			</div><!-- /wrapper -->
+			<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+		</div>
+		<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$shadow.show();
+
+							},
+							orientation : 'r',
+							cuboidsRandom : true,
+							disperseFactor : 30
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+		
+	</body>
+</html>	

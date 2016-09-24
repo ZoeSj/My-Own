@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<script>
+function draw(i){
+  var canvas=document.getElementById("myCanvas");
+  var context=canvas.getContext("2d");
+  var image=new Image();
+  image.src="dog2.jpg";
+  image.onload=function(){
+   if(i==1)
+   context.drawImage(image,0,0);
+   else if(i==2)
+   context.drawImage(image,400,0,200,300);
+   else
+   context.drawImage(image,30,30,440,400,700,0,160,180);
+  }
+}
+</script>
+<fieldset>
+<legend>
+<canvas id="myCanvas" width="850px" height="600px">
+</canvas>
+<br>
+<button onClick="draw(1)">原图</button>
+<button onClick="draw(2)">缩放图</button>
+<button onClick="draw(3)">切割图</button>
+</legend>
+</fieldset>
+</html>
